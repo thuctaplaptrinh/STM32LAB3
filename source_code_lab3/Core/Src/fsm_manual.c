@@ -102,12 +102,12 @@ void MODE3_run(){
 	switch(mode3Toggle){
 		case TOGGLE_INIT:
 			mode3Toggle = TOGGLE;
-			setTimer5(25);
+			setTimer3(25);
 			break;
 		case TOGGLE:
-			if(timer5_flag == 1){
+			if(timer3_flag == 1){
 				toggleLeds(YELLOW);
-				setTimer5(25);
+				setTimer3(25);
 			}
 			break;
 		default:
@@ -141,19 +141,19 @@ void MODE3_run(){
 	switch(mode3Seg){
 		case SEG_INIT:
 			mode3Seg = FIRST;
-			setTimer6(25);
+			setTimer4(25);
 			break;
 		case FIRST:
-			if(timer6_flag == 1){
+			if(timer4_flag == 1){
 				showTimeDelay_First(1,DelayTemp);
 				mode3Seg = SECOND;
-				setTimer6(25);
+				setTimer4(25);
 			}
 			break;
 		case SECOND:
-			if(timer6_flag == 1){
+			if(timer4_flag == 1){
 				showTimeDelay_Second(0,DelayTemp);
-				setTimer6(25);
+				setTimer4(25);
 				mode3Seg = FIRST;
 			}
 			break;
@@ -165,12 +165,12 @@ void MODE4_run(){
 	switch(mode4Toggle){
 		case TOGGLE_INIT:
 			mode4Toggle = TOGGLE;
-			setTimer7(25);
+			setTimer3(25);
 			break;
 		case TOGGLE:
-			if(timer7_flag == 1){
+			if(timer3_flag == 1){
 				toggleLeds(GREEN);
-				setTimer7(25);
+				setTimer3(25);
 			}
 			break;
 		default:
@@ -204,19 +204,19 @@ void MODE4_run(){
 	switch(mode4Seg){
 		case SEG_INIT:
 			mode4Seg = FIRST;
-			setTimer8(25);
+			setTimer4(25);
 			break;
 		case FIRST:
-			if(timer8_flag == 1){
+			if(timer4_flag == 1){
 				showTimeDelay_First(1,DelayTemp);
 				mode4Seg = SECOND;
-				setTimer8(25);
+				setTimer4(25);
 			}
 			break;
 		case SECOND:
-			if(timer8_flag == 1){
+			if(timer4_flag == 1){
 				showTimeDelay_Second(0,DelayTemp);
-				setTimer8(25);
+				setTimer4(25);
 				mode4Seg = FIRST;
 			}
 			break;
