@@ -1,0 +1,4 @@
+manual.c:9:6:MODE2_run	8	static
+manual.c:70:6:MODE3_run	8	static
+manual.c:130:6:MODE4_run	8	static
+manual.c:191:6:fsm_manual	8	static
