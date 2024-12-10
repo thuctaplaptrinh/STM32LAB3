@@ -29,6 +29,7 @@
 #include "software_timer.h"
 #include "led_display.h"
 #include "button.h"
+#include "scheduler.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -103,9 +104,15 @@ int main(void)
   setValues();
   displayTopToBottomLED(LED_INIT);
   displayLeftToRightLED(LED_INIT);
+
+  SCH_Add_Task(updateCountDown, 100, 100);
+  SCH_Add_Task(fsm_auto, 0, 1);
+  SCH_Add_Task(fsm_manual, 0, 25);
+
   while (1){
-	  fsm_auto();
-	  fsm_manual();
+	  SCH_Dispatch_Tasks();
+//	  fsm_auto();
+//	  fsm_manual();
 //	  if( is_button_pressed(0)){
 //		  HAL_GPIO_TogglePin(LR_RED_GPIO_Port, LR_RED_Pin);
 //	  }
@@ -263,7 +270,8 @@ static void MX_GPIO_Init(void)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	getKeyInput();
-	timerRun();
+//	timerRun();
+	SCH_Update();
 }
 /* USER CODE END 4 */
 

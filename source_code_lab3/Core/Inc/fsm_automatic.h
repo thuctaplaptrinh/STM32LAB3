@@ -15,6 +15,7 @@
 #include "button.h"
 #include "fsm_manual.h"
 
+void updateCountDown();
 void fsm_auto();
 
 #endif /* INC_FSM_AUTOMATIC_H_ */
